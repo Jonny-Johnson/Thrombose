@@ -3,10 +3,10 @@ Imports System.ServiceModel
 Imports WindowsApplication1.ServiceReference1
 
 Public Class Form1
-    Dim Client As New Service1Client("localcrap")
+    Dim Client As New Service1Client("localhost")
     Dim ownPlayer As Player
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+Private Sub btnNewPlayer_Click(sender As Object, e As EventArgs) Handles btnNewPlayer.Click
         ownPlayer = Client.NewConnect()
         Console.WriteLine(ownPlayer.ID)
         Console.WriteLine(ownPlayer.Name)
@@ -24,6 +24,10 @@ Public Class Form1
     Private Sub formUnload(sender As Object, e As EventArgs) Handles Me.FormClosing
         Client.Close()
     End Sub
+    
+
+    
+ 
 End Class
 
 

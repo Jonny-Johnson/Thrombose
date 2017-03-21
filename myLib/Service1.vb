@@ -11,9 +11,10 @@ Public Class Service1
     Public Shared players As New Dictionary(Of Integer, Player)
     Public Shared chatText As String = ""
 
-    Public Function NewConnect() As Player Implements IService1.NewConnect
+    Public Function NewConnect(name As String) As Player Implements IService1.NewConnect
         myLib.Player.IDCounter += 1
         Dim newPlayer = New Player(myLib.Player.IDCounter)
+        If name <> "" Then newPlayer.Name = name
         players.Add(newPlayer.ID, newPlayer)
         Console.WriteLine("New player registered with ID: " + CStr(newPlayer.ID))
         Return newPlayer
