@@ -292,7 +292,7 @@
       <wsa10:EndpointReference>
         <wsa10:Address>http://localhost:9000/ThromboseService/HelloService</wsa10:Address>
         <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
-          <Upn>Kiste-PC\Kiste</Upn>
+          <Upn>Kiste-PC\RemoteSteffen</Upn>
         </Identity>
       </wsa10:EndpointReference>
     </wsdl:port>

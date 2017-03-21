@@ -3,7 +3,9 @@
   <xs:import schemaLocation="http://localhost:9000/ThromboseService?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/myLib" />
   <xs:element name="NewConnect">
     <xs:complexType>
-      <xs:sequence />
+      <xs:sequence>
+        <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+      </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="NewConnectResponse">

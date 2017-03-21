@@ -6,8 +6,9 @@ Public Class Form1
     Dim Client As New Service1Client("localhost")
     Dim ownPlayer As Player
 
-Private Sub btnNewPlayer_Click(sender As Object, e As EventArgs) Handles btnNewPlayer.Click
-        ownPlayer = Client.NewConnect()
+    Private Sub btnNewPlayer_Click(sender As Object, e As EventArgs) Handles btnNewPlayer.Click
+        ownPlayer = Client.NewConnect(txtPlayerName.Text)
+        lblPlayer.Text = String.Format("Hallo, {0}. Viel Erfolg!", ownPlayer.Name)
         Console.WriteLine(ownPlayer.ID)
         Console.WriteLine(ownPlayer.Name)
     End Sub
@@ -24,10 +25,10 @@ Private Sub btnNewPlayer_Click(sender As Object, e As EventArgs) Handles btnNewP
     Private Sub formUnload(sender As Object, e As EventArgs) Handles Me.FormClosing
         Client.Close()
     End Sub
-    
 
-    
- 
+
+
+
 End Class
 
 

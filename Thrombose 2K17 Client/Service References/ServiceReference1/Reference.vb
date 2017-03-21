@@ -84,10 +84,10 @@ Namespace ServiceReference1
     Public Interface IService1
         
         <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/NewConnect", ReplyAction:="http://tempuri.org/IService1/NewConnectResponse")>  _
-        Function NewConnect() As ServiceReference1.Player
+        Function NewConnect(ByVal name As String) As ServiceReference1.Player
         
         <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/NewConnect", ReplyAction:="http://tempuri.org/IService1/NewConnectResponse")>  _
-        Function NewConnectAsync() As System.Threading.Tasks.Task(Of ServiceReference1.Player)
+        Function NewConnectAsync(ByVal name As String) As System.Threading.Tasks.Task(Of ServiceReference1.Player)
         
         <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/SendMessage", ReplyAction:="http://tempuri.org/IService1/SendMessageResponse")>  _
         Sub SendMessage(ByVal text As String)
@@ -133,12 +133,12 @@ Namespace ServiceReference1
             MyBase.New(binding, remoteAddress)
         End Sub
         
-        Public Function NewConnect() As ServiceReference1.Player Implements ServiceReference1.IService1.NewConnect
-            Return MyBase.Channel.NewConnect
+        Public Function NewConnect(ByVal name As String) As ServiceReference1.Player Implements ServiceReference1.IService1.NewConnect
+            Return MyBase.Channel.NewConnect(name)
         End Function
         
-        Public Function NewConnectAsync() As System.Threading.Tasks.Task(Of ServiceReference1.Player) Implements ServiceReference1.IService1.NewConnectAsync
-            Return MyBase.Channel.NewConnectAsync
+        Public Function NewConnectAsync(ByVal name As String) As System.Threading.Tasks.Task(Of ServiceReference1.Player) Implements ServiceReference1.IService1.NewConnectAsync
+            Return MyBase.Channel.NewConnectAsync(name)
         End Function
         
         Public Sub SendMessage(ByVal text As String) Implements ServiceReference1.IService1.SendMessage
