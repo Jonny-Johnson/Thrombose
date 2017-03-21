@@ -3,7 +3,7 @@ Imports System.ServiceModel
 Imports WindowsApplication1.ServiceReference1
 
 Public Class Form1
-    Dim Client As New Service1Client("internet")
+    Dim Client As New Service1Client("localcrap")
     Dim ownPlayer As Player
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
