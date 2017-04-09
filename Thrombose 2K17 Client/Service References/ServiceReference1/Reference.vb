@@ -79,6 +79,53 @@ Namespace ServiceReference1
         End Sub
     End Class
     
+    <System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0"),  _
+     System.Runtime.Serialization.DataContractAttribute(Name:="Game", [Namespace]:="http://schemas.datacontract.org/2004/07/myLib"),  _
+     System.SerializableAttribute()>  _
+    Partial Public Class Game
+        Inherits Object
+        Implements System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged
+        
+        <System.NonSerializedAttribute()>  _
+        Private extensionDataField As System.Runtime.Serialization.ExtensionDataObject
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private testArrayField() As Integer
+        
+        <Global.System.ComponentModel.BrowsableAttribute(false)>  _
+        Public Property ExtensionData() As System.Runtime.Serialization.ExtensionDataObject Implements System.Runtime.Serialization.IExtensibleDataObject.ExtensionData
+            Get
+                Return Me.extensionDataField
+            End Get
+            Set
+                Me.extensionDataField = value
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute()>  _
+        Public Property testArray() As Integer()
+            Get
+                Return Me.testArrayField
+            End Get
+            Set
+                If (Object.ReferenceEquals(Me.testArrayField, value) <> true) Then
+                    Me.testArrayField = value
+                    Me.RaisePropertyChanged("testArray")
+                End If
+            End Set
+        End Property
+        
+        Public Event PropertyChanged As System.ComponentModel.PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
+        
+        Protected Sub RaisePropertyChanged(ByVal propertyName As String)
+            Dim propertyChanged As System.ComponentModel.PropertyChangedEventHandler = Me.PropertyChangedEvent
+            If (Not (propertyChanged) Is Nothing) Then
+                propertyChanged(Me, New System.ComponentModel.PropertyChangedEventArgs(propertyName))
+            End If
+        End Sub
+    End Class
+    
     <System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0"),  _
      System.ServiceModel.ServiceContractAttribute(ConfigurationName:="ServiceReference1.IService1")>  _
     Public Interface IService1
@@ -100,6 +147,12 @@ Namespace ServiceReference1
         
         <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/GetChatText", ReplyAction:="http://tempuri.org/IService1/GetChatTextResponse")>  _
         Function GetChatTextAsync() As System.Threading.Tasks.Task(Of String)
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/GetGame", ReplyAction:="http://tempuri.org/IService1/GetGameResponse")>  _
+        Function GetGame() As ServiceReference1.Game
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/GetGame", ReplyAction:="http://tempuri.org/IService1/GetGameResponse")>  _
+        Function GetGameAsync() As System.Threading.Tasks.Task(Of ServiceReference1.Game)
     End Interface
     
     <System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")>  _
@@ -155,6 +208,14 @@ Namespace ServiceReference1
         
         Public Function GetChatTextAsync() As System.Threading.Tasks.Task(Of String) Implements ServiceReference1.IService1.GetChatTextAsync
             Return MyBase.Channel.GetChatTextAsync
+        End Function
+        
+        Public Function GetGame() As ServiceReference1.Game Implements ServiceReference1.IService1.GetGame
+            Return MyBase.Channel.GetGame
+        End Function
+        
+        Public Function GetGameAsync() As System.Threading.Tasks.Task(Of ServiceReference1.Game) Implements ServiceReference1.IService1.GetGameAsync
+            Return MyBase.Channel.GetGameAsync
         End Function
     End Class
 End Namespace

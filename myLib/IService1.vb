@@ -13,4 +13,7 @@ Public Interface IService1
 
     <OperationContract()>
     Function GetChatText() As String
+
+    <OperationContract()>
+    Function GetGame() As Game
 End Interface

@@ -166,6 +166,12 @@
     <None Include="Service References\ServiceReference1\ThromboseService2.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Service References\ServiceReference1\ThromboseService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceReference1\WindowsApplication1.ServiceReference1.Game.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\ServiceReference1\WindowsApplication1.ServiceReference1.Player.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>

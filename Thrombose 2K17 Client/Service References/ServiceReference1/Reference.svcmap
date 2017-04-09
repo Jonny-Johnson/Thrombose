@@ -22,11 +22,12 @@
     <MetadataSource Address="http://localhost:9000/ThromboseService" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
+    <MetadataFile FileName="Service1.wsdl" MetadataType="Wsdl" ID="fba5d7df-0f7a-4bcc-8820-b98013895f99" SourceId="1" SourceUrl="http://localhost:9000/ThromboseService?wsdl" />
+    <MetadataFile FileName="ThromboseService1.xsd" MetadataType="Schema" ID="846ced60-3aca-44e9-b79e-4473c31d72cd" SourceId="1" SourceUrl="http://localhost:9000/ThromboseService?xsd=xsd0" />
+    <MetadataFile FileName="ThromboseService3.xsd" MetadataType="Schema" ID="75fe7485-6a19-47f8-96ab-027aed8c6dab" SourceId="1" SourceUrl="http://localhost:9000/ThromboseService?xsd=xsd3" />
+    <MetadataFile FileName="ThromboseService.disco" MetadataType="Disco" ID="3541082e-26fa-4bae-8e61-2a0214feeba2" SourceId="1" SourceUrl="http://localhost:9000/ThromboseService?disco" />
     <MetadataFile FileName="ThromboseService2.xsd" MetadataType="Schema" ID="3f27c939-3d82-4dca-9b7f-216b46b1d24d" SourceId="1" SourceUrl="http://localhost:9000/ThromboseService?xsd=xsd2" />
     <MetadataFile FileName="ThromboseService.xsd" MetadataType="Schema" ID="49d51e9c-072c-440b-b790-fc2b5bcbe86a" SourceId="1" SourceUrl="http://localhost:9000/ThromboseService?xsd=xsd1" />
-    <MetadataFile FileName="ThromboseService1.xsd" MetadataType="Schema" ID="846ced60-3aca-44e9-b79e-4473c31d72cd" SourceId="1" SourceUrl="http://localhost:9000/ThromboseService?xsd=xsd0" />
-    <MetadataFile FileName="ThromboseService.disco" MetadataType="Disco" ID="3541082e-26fa-4bae-8e61-2a0214feeba2" SourceId="1" SourceUrl="http://localhost:9000/ThromboseService?disco" />
-    <MetadataFile FileName="Service1.wsdl" MetadataType="Wsdl" ID="fba5d7df-0f7a-4bcc-8820-b98013895f99" SourceId="1" SourceUrl="http://localhost:9000/ThromboseService?wsdl" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

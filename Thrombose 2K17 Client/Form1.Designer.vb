@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class Form1
+Partial Class frmThrombose
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -24,46 +24,49 @@ Partial Class Form1
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.btnNewPlayer = New System.Windows.Forms.Button()
-        Me.chatText = New System.Windows.Forms.TextBox()
+        Me.txtChat = New System.Windows.Forms.TextBox()
         Me.btnSendMessage = New System.Windows.Forms.Button()
-        Me.message = New System.Windows.Forms.TextBox()
+        Me.txtMessage = New System.Windows.Forms.TextBox()
         Me.tmrGetChatText = New System.Windows.Forms.Timer(Me.components)
         Me.lblPlayer = New System.Windows.Forms.Label()
         Me.txtPlayerName = New System.Windows.Forms.TextBox()
+        Me.tmrGetGame = New System.Windows.Forms.Timer(Me.components)
+        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.SuspendLayout()
         '
         'btnNewPlayer
         '
-        Me.btnNewPlayer.Location = New System.Drawing.Point(34, 65)
+        Me.btnNewPlayer.Location = New System.Drawing.Point(25, 60)
         Me.btnNewPlayer.Name = "btnNewPlayer"
         Me.btnNewPlayer.Size = New System.Drawing.Size(136, 83)
         Me.btnNewPlayer.TabIndex = 0
         Me.btnNewPlayer.Text = "Neuer Spieler"
         Me.btnNewPlayer.UseVisualStyleBackColor = True
         '
-        'chatText
+        'txtChat
         '
-        Me.chatText.Location = New System.Drawing.Point(56, 352)
-        Me.chatText.Multiline = True
-        Me.chatText.Name = "chatText"
-        Me.chatText.Size = New System.Drawing.Size(627, 138)
-        Me.chatText.TabIndex = 2
+        Me.txtChat.Location = New System.Drawing.Point(56, 396)
+        Me.txtChat.Multiline = True
+        Me.txtChat.Name = "txtChat"
+        Me.txtChat.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
+        Me.txtChat.Size = New System.Drawing.Size(627, 106)
+        Me.txtChat.TabIndex = 2
         '
         'btnSendMessage
         '
-        Me.btnSendMessage.Location = New System.Drawing.Point(234, 508)
+        Me.btnSendMessage.Location = New System.Drawing.Point(349, 508)
         Me.btnSendMessage.Name = "btnSendMessage"
-        Me.btnSendMessage.Size = New System.Drawing.Size(79, 20)
+        Me.btnSendMessage.Size = New System.Drawing.Size(120, 34)
         Me.btnSendMessage.TabIndex = 3
         Me.btnSendMessage.Text = "Senden"
         Me.btnSendMessage.UseVisualStyleBackColor = True
         '
-        'message
+        'txtMessage
         '
-        Me.message.Location = New System.Drawing.Point(56, 509)
-        Me.message.Name = "message"
-        Me.message.Size = New System.Drawing.Size(138, 20)
-        Me.message.TabIndex = 4
+        Me.txtMessage.Location = New System.Drawing.Point(56, 516)
+        Me.txtMessage.Name = "txtMessage"
+        Me.txtMessage.Size = New System.Drawing.Size(138, 20)
+        Me.txtMessage.TabIndex = 4
         '
         'tmrGetChatText
         '
@@ -81,12 +84,17 @@ Partial Class Form1
         '
         'txtPlayerName
         '
-        Me.txtPlayerName.Location = New System.Drawing.Point(25, 25)
+        Me.txtPlayerName.Location = New System.Drawing.Point(25, 34)
         Me.txtPlayerName.Name = "txtPlayerName"
         Me.txtPlayerName.Size = New System.Drawing.Size(103, 20)
         Me.txtPlayerName.TabIndex = 6
         '
-        'Form1
+        'tmrGetGame
+        '
+        Me.tmrGetGame.Enabled = True
+        Me.tmrGetGame.Interval = 1000
+        '
+        'frmThrombose
         '
         Me.AcceptButton = Me.btnSendMessage
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -94,22 +102,24 @@ Partial Class Form1
         Me.ClientSize = New System.Drawing.Size(747, 554)
         Me.Controls.Add(Me.txtPlayerName)
         Me.Controls.Add(Me.lblPlayer)
-        Me.Controls.Add(Me.message)
+        Me.Controls.Add(Me.txtMessage)
         Me.Controls.Add(Me.btnSendMessage)
-        Me.Controls.Add(Me.chatText)
+        Me.Controls.Add(Me.txtChat)
         Me.Controls.Add(Me.btnNewPlayer)
-        Me.Name = "Form1"
-        Me.Text = "Form1"
+        Me.Name = "frmThrombose"
+        Me.Text = "Thrombose!"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
 
     Friend WithEvents btnNewPlayer As Button
-    Friend WithEvents chatText As TextBox
+    Friend WithEvents txtChat As TextBox
     Friend WithEvents btnSendMessage As Button
-    Friend WithEvents message As TextBox
+    Friend WithEvents txtMessage As TextBox
     Friend WithEvents tmrGetChatText As Timer
     Friend WithEvents lblPlayer As Label
     Friend WithEvents txtPlayerName As TextBox
+    Friend WithEvents tmrGetGame As Timer
+    Friend WithEvents Timer1 As Timer
 End Class

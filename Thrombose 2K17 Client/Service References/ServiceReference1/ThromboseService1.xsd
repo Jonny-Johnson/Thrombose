@@ -39,4 +39,16 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="GetGame">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetGameResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/myLib" minOccurs="0" name="GetGameResult" nillable="true" type="q2:Game" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 </xs:schema>
