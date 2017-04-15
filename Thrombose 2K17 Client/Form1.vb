@@ -1,5 +1,7 @@
 ﻿Imports System
 Imports System.ServiceModel
+Imports System.ServiceModel.Description
+'Imports myLib
 Imports WindowsApplication1.ServiceReference1
 
 Public Class frmThrombose
@@ -30,9 +32,24 @@ Public Class frmThrombose
 
         'If Server.GetGame.hasStarted Then
         Dim game As Game = Server.GetGame()
-        Server.SendMessage(game.testArray(0))
-        Server.SendMessage(game.testArray(1))
+        game.fields(0, 1).isSelected = True
+        'Server.SendMessage(game.testArray(0))
+        'Server.SendMessage(game.testArray(1))
         'End If
+    End Sub
+
+    Private Sub frmThrombose_Load(sender As Object, e As EventArgs) Handles Me.Load
+        For Each op As OperationDescription In Server.Endpoint.Contract.Operations
+            Dim dataContractBehavior As DataContractSerializerOperationBehavior =
+                op.Behaviors.Find(Of DataContractSerializerOperationBehavior)()
+            If dataContractBehavior IsNot Nothing Then
+                dataContractBehavior.DataContractSurrogate = New GameSurrogated()
+            Else
+                dataContractBehavior = New DataContractSerializerOperationBehavior(op)
+                dataContractBehavior.DataContractSurrogate = New GameSurrogated()
+                op.Behaviors.Add(dataContractBehavior)
+            End If
+        Next
     End Sub
 End Class
 

@@ -150,6 +150,8 @@
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
     </None>
+    <None Include="My Project\DataSources\myLib.Game.datasource" />
+    <None Include="My Project\DataSources\myLib.Player.datasource" />
     <None Include="My Project\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <CustomToolNamespace>My</CustomToolNamespace>
@@ -168,12 +170,6 @@
     </None>
     <None Include="Service References\ServiceReference1\ThromboseService3.xsd">
       <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\ServiceReference1\WindowsApplication1.ServiceReference1.Game.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\ServiceReference1\WindowsApplication1.ServiceReference1.Player.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Thrombose 2K17 Client_TemporaryKey.pfx" />
   </ItemGroup>
@@ -209,6 +205,12 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\myLib\myLib.vbproj">
+      <Project>{8BA60E27-F9C8-4BB8-B585-F8E2EF951C4B}</Project>
+      <Name>myLib</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

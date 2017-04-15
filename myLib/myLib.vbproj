@@ -71,6 +71,7 @@
   <ItemGroup>
     <Compile Include="Field.vb" />
     <Compile Include="Game.vb" />
+    <Compile Include="GameReplacement.vb" />
     <Compile Include="GameSurrogated.vb" />
     <Compile Include="Piece.vb" />
     <Compile Include="Player.vb" />
